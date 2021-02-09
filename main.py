@@ -8,30 +8,30 @@ img = ""
 # Function to get the city name and then show the weather details
 def show_info():
     global img
+
     city = city_text.get()
-    if city != "":
+
+
+    if not city:
+        output["text"] = "Please enter the city name!"
+    else:
         data = WeatherData(city)
-        city_name = data.city
-
-        if city_name:
-
+        if data.status >= 400:
+            output["text"] = f"Please check the city name!"
+        else:
             img = PhotoImage(file=f"icons/{data.icon}.png")
             status["image"] = img
 
             output["text"] = f"Country: {data.country}\n" \
-                             f"City: {city_name}\n" \
+                             f"City: {data.city}\n" \
                              f"Temperature: {data.temp}"
-        else:
-            output["text"] = "Please check the city name!"
-    else:
-        output["text"] = "Please enter a city name!"
 
 
 window = Tk()
 
 city_text = StringVar()
 
-window.geometry("600x530")
+window.geometry("650x550")
 window.title("Weather App")
 window.config(padx=100, pady=100, bg="#97E8E8")
 

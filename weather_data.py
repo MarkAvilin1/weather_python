@@ -10,9 +10,10 @@ class WeatherData:
             "q": city_name,
             "appid": self.KEY
         }
-        self.RESPONSE = requests.get(url=self.API_ENDPOINT, params=self.parameters)
-        self.RESPONSE.raise_for_status()
-        self.data = self.RESPONSE.json()
+        self.response = requests.get(url=self.API_ENDPOINT, params=self.parameters)
+        self.response.raise_for_status()
+        self.status = self.response.status_code
+        self.data = self.response.json()
         self.country = self.data["sys"]["country"]
         self.city = self.data["name"]
         self.temp = int(self.data["main"]["temp"] - 273.15)
