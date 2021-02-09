@@ -5,12 +5,11 @@ from weather_data import WeatherData
 
 img = ""
 
+
 # Function to get the city name and then show the weather details
 def show_info():
     global img
-
     city = city_text.get()
-
 
     if not city:
         output["text"] = "Please enter the city name!"
@@ -31,7 +30,7 @@ window = Tk()
 
 city_text = StringVar()
 
-window.geometry("650x550")
+window.geometry("650x530")
 window.title("Weather App")
 window.config(padx=100, pady=100, bg="#97E8E8")
 
