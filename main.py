@@ -43,7 +43,7 @@ btn.pack()
 status = Label(image="", bg="#97E8E8")
 status.pack()
 
-output = Label(text="", bg="#97E8E8", fg="#F29A0C", font=("Ariel", 24, "bold"))
+output = Label(text="", bg="#97E8E8", fg="#F29A0C", font=("Ariel", 24, "bold"), justify="left")
 output.pack()
 
 window.mainloop()
