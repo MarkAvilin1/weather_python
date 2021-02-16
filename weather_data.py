@@ -11,7 +11,7 @@ class WeatherData:
             "appid": self.KEY
         }
         self.response = requests.get(url=self.API_ENDPOINT, params=self.parameters)
-        self.response.raise_for_status()
+        # self.response.raise_for_status()
         self.status = self.response.status_code
         self.data = self.response.json()
         self.country = self.data["sys"]["country"]

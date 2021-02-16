@@ -23,7 +23,7 @@ def show_info():
 
             output["text"] = f"Country: {data.country}\n" \
                              f"City: {data.city}\n" \
-                             f"Temperature: {data.temp}"
+                             f"Temperature: {data.temp} °C"
 
 
 window = Tk()
